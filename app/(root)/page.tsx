@@ -43,6 +43,13 @@ const carouselItems = [
   },
 ];
 
+const heroTexts = [
+  "Digital Experiences",
+  "Brand Identities",
+  "Web Applications",
+  "Mobile Solutions",
+];
+
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -50,13 +57,6 @@ export default function Home() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const heroTexts = [
-    "Digital Experiences",
-    "Brand Identities",
-    "Web Applications",
-    "Mobile Solutions",
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {

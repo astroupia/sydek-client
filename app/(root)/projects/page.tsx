@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "@/components/shared/hero-section";
 import CtaCard from "@/components/shared/cta-card";
 import FeaturedProject from "@/components/projects/featured-project";
