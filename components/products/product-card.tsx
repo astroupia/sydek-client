@@ -1,6 +1,7 @@
-import React from 'react';
-import { Card } from '../ui/card';
-import { Button } from '../ui/button';
+import React from "react";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import Image from "next/image";
 
 export interface ProductCardProps {
   title: string;
@@ -18,23 +19,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
   price,
   features = [],
-  ctaLabel = 'Learn More',
-  onCtaClick
+  ctaLabel = "Learn More",
+  onCtaClick,
 }) => {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
       <div className="aspect-video relative overflow-hidden">
-        <img
+        <Image
           src={imageUrl}
           alt={title}
-          className="object-cover w-full h-full transition-transform hover:scale-105"
+          fill
+          className="object-cover transition-transform hover:scale-105"
         />
       </div>
       <div className="p-6 space-y-4">
         <h3 className="text-2xl font-bold">{title}</h3>
-        {price && (
-          <p className="text-xl font-semibold text-primary">{price}</p>
-        )}
+        {price && <p className="text-xl font-semibold text-primary">{price}</p>}
         <p className="text-gray-600 dark:text-gray-300">{description}</p>
         {features.length > 0 && (
           <ul className="space-y-2">
@@ -59,10 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             ))}
           </ul>
         )}
-        <Button
-          onClick={onCtaClick}
-          className="w-full"
-        >
+        <Button onClick={onCtaClick} className="w-full">
           {ctaLabel}
         </Button>
       </div>

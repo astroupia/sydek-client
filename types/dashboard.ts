@@ -21,13 +21,7 @@ export interface Task {
   title: string;
   description: string;
   projectName: string;
-  assignee: {
-    id: string;
-    name: string;
-    email: string;
-    role: string;
-    status: "active" | "away" | "offline";
-  };
+  assignee: User;
   dueDate: string;
   priority: "high" | "medium" | "low";
   status: "todo" | "in-progress" | "review" | "completed";
@@ -77,8 +71,17 @@ export interface TaskList {
 }
 
 export interface TaskDetail extends Task {
-  comments: Comment[];
+  comments: TaskComment[];
   subtasks: Subtask[];
+  attachments: Array<{
+    id: string;
+    name: string;
+    url: string;
+    type: string;
+    size: string;
+    uploadedBy: User;
+    uploadedAt: string;
+  }>;
   timeSpent?: number;
 }
 
@@ -144,4 +147,19 @@ export interface Deadline {
   projectId: string;
   dueDate: string;
   priority: "high" | "medium" | "low";
+}
+
+export interface TaskComment {
+  id: string;
+  user: User;
+  content: string;
+  timestamp: string;
+}
+
+export interface TaskHistory {
+  id: string;
+  user: User;
+  action: string;
+  details?: string;
+  timestamp: string;
 }
