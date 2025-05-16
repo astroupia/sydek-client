@@ -10,58 +10,58 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  {
-    title: "Platform",
-    submenu: {
-      featured: [
-        {
-          title: "Client Platform",
-          description: "Complete digital solution for managing your business",
-          image: "/placeholder.svg?height=200&width=300",
-          href: "/solutions/platform/client-digital-platform",
-          color: "from-blue-500/20 to-purple-500/20",
-        },
-        {
-          title: "Developer Platform",
-          description: "Powerful tools and APIs for developers",
-          image: "/placeholder.svg?height=200&width=300",
-          href: "/solutions/platform/developer-platform",
-          color: "from-emerald-500/20 to-cyan-500/20",
-        },
-      ],
-      categories: [
-        {
-          title: "Core Features",
-          items: [
-            { title: "Project Management", href: "#" },
-            { title: "Team Collaboration", href: "#" },
-            { title: "Analytics Dashboard", href: "#" },
-          ],
-        },
-        {
-          title: "Integrations",
-          items: [
-            { title: "API Access", href: "#" },
-            { title: "Webhooks", href: "#" },
-            { title: "Custom Development", href: "#" },
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   title: "Platform",
+  //   submenu: {
+  //     featured: [
+  //       {
+  //         title: "Client Platform",
+  //         description: "Complete digital solution for managing your business",
+  //         image: "/placeholder.svg?height=200&width=300",
+  //         href: "/solutions/platform/client-digital-platform",
+  //         color: "from-blue-500/20 to-purple-500/20",
+  //       },
+  //       {
+  //         title: "Developer Platform",
+  //         description: "Powerful tools and APIs for developers",
+  //         image: "/placeholder.svg?height=200&width=300",
+  //         href: "/solutions/platform/developer-platform",
+  //         color: "from-emerald-500/20 to-cyan-500/20",
+  //       },
+  //     ],
+  //     categories: [
+  //       {
+  //         title: "Core Features",
+  //         items: [
+  //           { title: "Project Management", href: "#" },
+  //           { title: "Team Collaboration", href: "#" },
+  //           { title: "Analytics Dashboard", href: "#" },
+  //         ],
+  //       },
+  //       {
+  //         title: "Integrations",
+  //         items: [
+  //           { title: "API Access", href: "#" },
+  //           { title: "Webhooks", href: "#" },
+  //           { title: "Custom Development", href: "#" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
   {
     title: "Solutions",
     submenu: {
       featured: [
         {
-          title: "Enterprise Solutions",
+          title: "Custom Projects",
           description: "Scalable solutions for large organizations",
           image: "/placeholder.svg?height=200&width=300",
           href: "/solutions/products",
           color: "from-orange-500/20 to-red-500/20",
         },
         {
-          title: "Custom Projects",
+          title: "Our Products",
           description: "Tailored solutions for your unique needs",
           image: "/placeholder.svg?height=200&width=300",
           href: "/solutions/projects",
@@ -69,64 +69,64 @@ const navItems = [
         },
       ],
       categories: [
-        {
-          title: "By Industry",
-          items: [
-            { title: "Healthcare", href: "#" },
-            { title: "Finance", href: "#" },
-            { title: "E-commerce", href: "#" },
-          ],
-        },
-        {
-          title: "Services",
-          items: [
-            { title: "Consulting", href: "/solutions/services" },
-            { title: "Implementation", href: "#" },
-            { title: "Support", href: "#" },
-          ],
-        },
+        // {
+        //   title: "By Industry",
+        //   items: [
+        //     { title: "Healthcare", href: "#" },
+        //     { title: "Finance", href: "#" },
+        //     { title: "E-commerce", href: "#" },
+        //   ],
+        // },
+        // {
+        //   title: "Services",
+        //   items: [
+        //     { title: "Consulting", href: "/solutions/services" },
+        //     { title: "Implementation", href: "#" },
+        //     { title: "Support", href: "#" },
+        //   ],
+        // },
       ],
     },
   },
-  {
-    title: "Resources",
-    submenu: {
-      featured: [
-        {
-          title: "Editorial Hub",
-          description: "Insights and updates from our experts",
-          image: "/placeholder.svg?height=200&width=300",
-          href: "/resources/editorial",
-          color: "from-violet-500/20 to-indigo-500/20",
-        },
-        {
-          title: "Documentation",
-          description: "Comprehensive guides and references",
-          image: "/placeholder.svg?height=200&width=300",
-          href: "/resources/docs",
-          color: "from-teal-500/20 to-emerald-500/20",
-        },
-      ],
-      categories: [
-        {
-          title: "Learn",
-          items: [
-            { title: "Getting Started", href: "#" },
-            { title: "Tutorials", href: "#" },
-            { title: "Case Studies", href: "#" },
-          ],
-        },
-        {
-          title: "Support",
-          items: [
-            { title: "Help Center", href: "#" },
-            { title: "Community", href: "#" },
-            { title: "Status", href: "#" },
-          ],
-        },
-      ],
-    },
-  },
+  // {
+  //   title: "Resources",
+  //   submenu: {
+  //     featured: [
+  //       {
+  //         title: "Editorial Hub",
+  //         description: "Insights and updates from our experts",
+  //         image: "/placeholder.svg?height=200&width=300",
+  //         href: "/resources/editorial",
+  //         color: "from-violet-500/20 to-indigo-500/20",
+  //       },
+  //       {
+  //         title: "Documentation",
+  //         description: "Comprehensive guides and references",
+  //         image: "/placeholder.svg?height=200&width=300",
+  //         href: "/resources/docs",
+  //         color: "from-teal-500/20 to-emerald-500/20",
+  //       },
+  //     ],
+  //     categories: [
+  //       {
+  //         title: "Learn",
+  //         items: [
+  //           { title: "Getting Started", href: "#" },
+  //           { title: "Tutorials", href: "#" },
+  //           { title: "Case Studies", href: "#" },
+  //         ],
+  //       },
+  //       {
+  //         title: "Support",
+  //         items: [
+  //           { title: "Help Center", href: "#" },
+  //           { title: "Community", href: "#" },
+  //           { title: "Status", href: "#" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
   {
     title: "Company",
     submenu: {
@@ -139,29 +139,44 @@ const navItems = [
           color: "from-blue-500/20 to-sky-500/20",
         },
         {
-          title: "Careers",
-          description: "Join our growing team",
+          title: "Contact Us",
+          description: "Start Growing with Us!",
           image: "/placeholder.svg?height=200&width=300",
-          href: "/company/careers",
+          href: "/company/contact",
           color: "from-green-500/20 to-emerald-500/20",
         },
       ],
       categories: [
         {
           title: "Connect",
-          items: [
-            { title: "Contact", href: "/company/contact" },
-            { title: "Partners", href: "/company/partners" },
-            { title: "Press", href: "#" },
-          ],
+          items: [{ title: "Partners", href: "/company/partners" }],
         },
         {
           title: "Legal",
           items: [
             { title: "Privacy", href: "/privacy" },
             { title: "Terms", href: "/terms" },
-            { title: "Security", href: "/security" },
           ],
+        },
+      ],
+    },
+  },
+  {
+    title: "Out Sourcing",
+    submenu: {
+      featured: [
+        {
+          title: "Out Sourcing",
+          description: "Out Sourcing",
+          image: "/placeholder.svg?height=200&width=300",
+          href: "/out-sourcing",
+          color: "from-blue-500/20 to-sky-500/20",
+        },
+      ],
+      categories: [
+        {
+          title: "Out Sourcing",
+          items: [{ title: "Out Sourcing", href: "/out-sourcing" }],
         },
       ],
     },
@@ -314,7 +329,7 @@ export default function Navbar() {
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
-          </Button>
+            </Button>
 
             <Link href="/auth">
               <Button className="hidden md:inline-flex bg-secondary hover:bg-secondary/90 text-white">
