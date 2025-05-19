@@ -91,7 +91,7 @@
       hsl(var(--gradient-stop))
     );
     background-size: 200% 200%;
-    animation: textGradient 8s ease-in-out infinite alternate;
+    animation: textGradient 8s alternate infinite ease-in-out;
   }
 
   .client-carousel {

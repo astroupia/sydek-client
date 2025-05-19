@@ -6,38 +6,33 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Code, Layers, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import InteractiveBackground from "@/components/interactive-background";
 import { AnimatedCarousel } from "@/components/animated-carousel";
 
 const clients = [
-  { name: "Microsoft", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Google", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Amazon", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Apple", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Meta", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Netflix", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Spotify", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Tesla", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Uber", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Airbnb", logo: "/placeholder.svg?height=60&width=120" },
+  { name: "Wegenie", logo: "/assets/images/logos/wegenie.png" },
+  { name: "Liyu", logo: "/assets/images/logos/liyu.png" },
+  { name: "Organic Millstone", logo: "/assets/images/logos/om.png" },
+  { name: "Fetan", logo: "/assets/images/logos/fetan.png" },
+  { name: "Diplomat Corner", logo: "/assets/images/logos/diplomat.png" },
+  { name: "Post Gallery", logo: "/assets/images/logos/post.png" },
 ];
 
 const carouselItems = [
   {
     id: 1,
-    image: "/placeholder.svg?height=600&width=1200",
+    image: "/assets/images/home/innovative-solutions.png",
     title: "Innovative Solutions",
     description: "Transforming ideas into reality",
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=600&width=1200",
+    image: "/assets/images/home/cutting-edge-technology.png",
     title: "Cutting-edge Technology",
     description: "Staying ahead in the digital world",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=600&width=1200",
+    image: "/assets/images/home/expert-team.png",
     title: "Expert Team",
     description: "Dedicated professionals at your service",
   },
@@ -108,16 +103,20 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Button
-                size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-white"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Our Services
-              </Button>
+              <Link href="/company/contact">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-white"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/solutions/services">
+                <Button size="lg" variant="outline">
+                  Our Services
+                </Button>
+              </Link>
             </motion.div>
           </div>
 
@@ -132,16 +131,27 @@ export default function Home() {
                 <div className="flex items-center space-x-2">
                   <div className="h-3 w-3 rounded-full bg-green-500 dark:bg-green-400"></div>
                   <p className="text-sm font-medium text-foreground">
-                    Trusted by 500+ companies worldwide
+                    Trusted by 15+ companies worldwide
                   </p>
                 </div>
                 <div className="hidden md:flex items-center space-x-2">
                   <div className="flex -space-x-2">
-                    {[1, 2, 3].map((i) => (
+                    {[
+                      "/assets/images/about/daniel.jpg",
+                      "/assets/images/about/michael.jpg",
+                      "/assets/images/about/nahom.jpg",
+                    ].map((image, i) => (
                       <div
                         key={i}
-                        className="h-6 w-6 rounded-full bg-[#BBADD5] border-2 border-background dark:border-background dark:bg-[#BBADD5]/70"
-                      ></div>
+                        className="relative h-6 w-6 rounded-full border-2 border-background dark:border-background overflow-hidden"
+                      >
+                        <Image
+                          src={image}
+                          alt={`Team member ${i + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     ))}
                   </div>
                   <p className="text-sm font-medium text-foreground">
@@ -175,7 +185,7 @@ export default function Home() {
                     alt={client.name}
                     width={120}
                     height={60}
-                    className="grayscale hover:grayscale-0 transition-all duration-300"
+                    className="grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300 "
                   />
                 </div>
               ))}
@@ -230,7 +240,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                   <Link
-                    href="#"
+                    href="/solutions/projects"
                     className="mt-4 inline-flex items-center text-secondary hover:underline"
                   >
                     Learn more
@@ -264,16 +274,18 @@ export default function Home() {
                 and user-centric websites, robust back-end systems, and seamless
                 mobile apps that drive engagement and deliver value.
               </p>
-              <Button className="bg-secondary hover:bg-secondary/90 text-white">
-                About Us
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/company/about">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white">
+                  About Us
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-2xl blur opacity-20"></div>
               <div className="relative rounded-2xl overflow-hidden border shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/assets/images/home/future-thinking.jpg"
                   alt="Sydek Team"
                   width={800}
                   height={600}
@@ -299,19 +311,15 @@ export default function Home() {
                 business forward.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button
-                  size="lg"
-                  className="bg-white text-secondary hover:bg-white/90"
-                >
-                  Get Started
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10"
-                >
-                  Contact Us
-                </Button>
+                <Link href="/company/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white/10"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

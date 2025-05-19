@@ -7,7 +7,7 @@ interface HeroSectionProps {
   title: string;
   highlightedTitle?: string; // Optional part of title with gradient
   description: string;
-  buttonText: string;
+  buttonText?: string;
   buttonLink?: string; // Optional link for routing
   onButtonClick?: () => void; // Optional click handler
   backgroundParticles?: number; // Customize InteractiveBackground
@@ -40,24 +40,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
           {description}
         </p>
-        <Button
-          size="lg"
-          className="bg-secondary hover:bg-secondary/90 text-white"
-          onClick={onButtonClick}
-          asChild={!!buttonLink} // Use asChild for Link wrapping
-        >
-          {buttonLink ? (
-            <a href={buttonLink}>
-              {buttonText}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          ) : (
-            <>
-              {buttonText}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </>
-          )}
-        </Button>
+        {buttonText && (
+          <Button
+            size="lg"
+            className="bg-secondary hover:bg-secondary/90 text-white"
+            onClick={onButtonClick}
+            asChild={!!buttonLink} // Use asChild for Link wrapping
+          >
+            {buttonLink ? (
+              <a href={buttonLink}>
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            ) : (
+              <>
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </>
+            )}
+          </Button>
+        )}
       </div>
     </div>
   </section>

@@ -1,0 +1,17 @@
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "gmailEmail": "john@gmail.com",
+  "subject": "Test Contact Form Submission",
+  "message": "This is a test message to verify the contact form API is working correctly.",
+  "inquiryType": {
+    "generalInquiry": true,
+    "outsourcing": false,
+    "partnership": false,
+    "bookMeeting": false
+  },
+  "entityType": "company",
+  "companyEmployees": "51-200",
+  "companyIndustry": "Technology",
+  "companyDomain": "example.com"
+}
