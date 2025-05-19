@@ -78,7 +78,7 @@ const products: Product[] = [
     title: "Echolens",
     description:
       "AI-powered TikTok analytics with personalized podcast insights, virality scoring, and advanced optimization filters for faster, smarter growth.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "../assets/images/products/serp.png",
     category: "Analytics",
     features: [
       "Personalized podcast analyzing TikTok performance",
@@ -119,11 +119,11 @@ const ProductsPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Introducing <span className="text-gradient">{products[0].title}</span>
+                Introducing <span className="text-gradient">{products[3].title}</span>
               </h2>
-              <p className="text-lg mb-6">{products[0].description}</p>
+              <p className="text-lg mb-6">{products[3].description}</p>
               <div className="space-y-4 mb-8">
-                {products[0].features.map((feature, idx) => (
+                {products[3].features.map((feature, idx) => (
                   <div key={idx} className="flex items-start">
                     <CheckCircle2 className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
                     <span>{feature}</span>
@@ -131,7 +131,7 @@ const ProductsPage: React.FC = () => {
                 ))}
               </div>
               <Button asChild className="bg-secondary hover:bg-secondary/90">
-                <Link href={products[0].link}>
+                <Link href={products[3].link}>
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -140,8 +140,8 @@ const ProductsPage: React.FC = () => {
             <div className="relative">
               <div className="aspect-[4/3] overflow-hidden rounded-xl border shadow-xl">
                 <Image
-                  src={products[0].image}
-                  alt={`${products[0].title} Dashboard`}
+                  src={products[3].image}
+                  alt={`${products[3].title} Dashboard`}
                   width={800}
                   height={600}
                   className="w-full h-full object-contain"
