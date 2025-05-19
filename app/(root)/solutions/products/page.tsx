@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -9,23 +9,23 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import HeroSection from "@/components/shared/hero-section"
-import React, { JSX } from "react"
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import HeroSection from "@/components/shared/hero-section";
+import React, { JSX } from "react";
 
 interface Product {
-  title: string
-  description: string
-  image: string
-  category: "Crowdfunding" | "Finance" | "Education" | "Analytics"
-  features: string[]
-  link: string
+  title: string;
+  description: string;
+  image: string;
+  category: "Crowdfunding" | "Finance" | "Education" | "Analytics";
+  features: string[];
+  link: string;
 }
 
 interface Integration {
-  name: string
-  logo: string
+  name: string;
+  logo: string;
 }
 
 const products: Product[] = [
@@ -42,7 +42,7 @@ const products: Product[] = [
       "Customizable campaign pages",
       "Real-time donation tracking",
     ],
-    link: "https://wegenie-webapp.vercel.app/"
+    link: "https://wegenie-webapp.vercel.app/",
   },
   {
     title: "Fetan",
@@ -57,7 +57,7 @@ const products: Product[] = [
       "Secure payment processing",
       "Comprehensive documentation",
     ],
-    link: "https://fetan.co/"
+    link: "https://fetan.co/",
   },
   {
     title: "Tibeb",
@@ -72,7 +72,7 @@ const products: Product[] = [
       "Community engagement tools",
       "Practical real-world skill focus",
     ],
-    link: "https://tibeb.vercel.app/"
+    link: "https://tibeb.vercel.app/",
   },
   {
     title: "Echolens",
@@ -87,9 +87,9 @@ const products: Product[] = [
       "Comprehensive PDF reports and strategy breakdowns",
       "Secure dashboard with real-time tracking",
     ],
-    link: "https://echolens.vercel.app/"
+    link: "https://echolens.vercel.app/",
   },
-]
+];
 
 const integrations: Integration[] = [
   { name: "Chapa", logo: "../assets/images/products/chapa.png" },
@@ -98,13 +98,12 @@ const integrations: Integration[] = [
   { name: "Salesforce", logo: "../assets/images/products/salesforce.png" },
   { name: "Slack", logo: "../assets/images/products/slack.png" },
   { name: "Shopify", logo: "../assets/images/products/shopify.png" },
-]
+];
 
 const ProductsPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-
 
       <HeroSection
         title="Our"
@@ -112,14 +111,14 @@ const ProductsPage: React.FC = () => {
         description="Powerful digital solutions designed to help your business thrive."
       />
 
-
       {/* Featured Product */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Introducing <span className="text-gradient">{products[3].title}</span>
+                Introducing{" "}
+                <span className="text-gradient">{products[3].title}</span>
               </h2>
               <p className="text-lg mb-6">{products[3].description}</p>
               <div className="space-y-4 mb-8">
@@ -149,7 +148,7 @@ const ProductsPage: React.FC = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-secondary rounded-lg p-4 shadow-lg">
-                <p className="text-white font-bold">Crowdfunding Innovation</p>
+                <p className="text-white font-bold">Marketing Innovation</p>
               </div>
             </div>
           </div>
@@ -187,7 +186,9 @@ const ProductsPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {products
                   .filter((p) => p.category === "Crowdfunding")
-                  .map((product, idx) => <ProductCard key={idx} product={product} />)}
+                  .map((product, idx) => (
+                    <ProductCard key={idx} product={product} />
+                  ))}
               </div>
             </TabsContent>
 
@@ -195,7 +196,9 @@ const ProductsPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {products
                   .filter((p) => p.category === "Finance")
-                  .map((product, idx) => <ProductCard key={idx} product={product} />)}
+                  .map((product, idx) => (
+                    <ProductCard key={idx} product={product} />
+                  ))}
               </div>
             </TabsContent>
           </Tabs>
@@ -206,7 +209,6 @@ const ProductsPage: React.FC = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
             {/* Left: Visual */}
             <div className="order-2 lg:order-1 flex justify-center">
               <div className="relative w-[320px] h-[320px]">
@@ -223,7 +225,9 @@ const ProductsPage: React.FC = () => {
                       style={{ animationDelay: "1s" }}
                     />
                     <div className="absolute inset-[45%] bg-secondary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">Sydek</span>
+                      <span className="text-white font-bold text-sm">
+                        Sydek
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -259,10 +263,14 @@ const ProductsPage: React.FC = () => {
             {/* Right: Text Content */}
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Build Your <span className="text-gradient">Integration Solution</span>
+                Build Your{" "}
+                <span className="text-gradient">Integration Solution</span>
               </h2>
               <p className="text-lg mb-6">
-                Let us help you create a custom integration solution that connects your business with the tools and services you need. Our team specializes in building robust integrations with various third-party applications.
+                Let us help you create a custom integration solution that
+                connects your business with the tools and services you need. Our
+                team specializes in building robust integrations with various
+                third-party applications.
               </p>
               <div className="space-y-4 mb-8">
                 {[
@@ -297,22 +305,28 @@ const ProductsPage: React.FC = () => {
         </div>
       </section>
 
-
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Digital Experience?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Transform Your Digital Experience?
+            </h2>
             <p className="text-xl mb-8 text-muted-foreground">
-              Discover how Sydek products can empower your business and community.
+              Discover how Sydek products can empower your business and
+              community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+              {/* <Button
+                asChild
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90"
+              >
                 <Link href="/company/contact">
                   Schedule a Demo
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
+              </Button> */}
               <Button asChild size="lg" variant="outline">
                 <Link href="/company/contact">Contact Sales</Link>
               </Button>
@@ -321,11 +335,11 @@ const ProductsPage: React.FC = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }): JSX.Element => (
@@ -357,13 +371,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }): JSX.Element => (
       </ul>
     </CardContent>
     <CardFooter className="flex justify-end items-center border-t pt-4">
-      <Button asChild variant="ghost" size="sm" className="hover:text-secondary">
+      <Button
+        asChild
+        variant="ghost"
+        size="sm"
+        className="hover:text-secondary"
+      >
         <Link href={product.link}>
           Learn More <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </Button>
     </CardFooter>
   </Card>
-)
+);
 
-export default ProductsPage
+export default ProductsPage;

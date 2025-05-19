@@ -17,7 +17,6 @@ export interface Product {
   tags?: string[]; // Optional tags like "Fintech", "Education", "E-commerce"
 }
 
-
 export default function ProductsPage() {
   const productsData: Product[] = [
     // {
@@ -40,16 +39,16 @@ export default function ProductsPage() {
       url: "https://rehobothathletics.com",
       tags: ["Sports", "Branding", "Web Design"],
     },
-    {
-      id: "nibertad",
-      title: "NiberTad",
-      description:
-        "A pioneering real estate dealership platform in Ethiopia, offering property advertisements with a user-centric software design.",
-      category: "Web Platform",
-      image: "../assets/images/projects/nibertad.png", // Replace with actual image path
-      url: "https://nibretad.com",
-      tags: ["Real Estate", "Platform", "Ethiopia"],
-    },
+    // {
+    //   id: "nibertad",
+    //   title: "NiberTad",
+    //   description:
+    //     "A pioneering real estate dealership platform in Ethiopia, offering property advertisements with a user-centric software design.",
+    //   category: "Web Platform",
+    //   image: "../assets/images/projects/nibertad.png", // Replace with actual image path
+    //   url: "https://nibretad.com",
+    //   tags: ["Real Estate", "Platform", "Ethiopia"],
+    // },
     // {
     //   id: "shegerai",
     //   title: "Shegerai",
@@ -69,15 +68,15 @@ export default function ProductsPage() {
       image: "../assets/images/projects/diplomat-corner.png", // Replace with actual image path
       tags: ["Diplomatic Services", "Platform", "Ethiopia"],
     },
-    {
-      id: "beblocky",
-      title: "BeBlocky",
-      description:
-        "A revolutionary app for kids making learning computer programming interactive and fun using graphical blocks, inspired by Scratch.",
-      category: "Mobile App & Education",
-      image: "../assets/images/projects/beblocky.png", // Replace with actual image path
-      tags: ["Mobile App", "Education", "Kids", "Coding"],
-    },
+    // {
+    //   id: "beblocky",
+    //   title: "BeBlocky",
+    //   description:
+    //     "A revolutionary app for kids making learning computer programming interactive and fun using graphical blocks, inspired by Scratch.",
+    //   category: "Mobile App & Education",
+    //   image: "../assets/images/projects/beblocky.png", // Replace with actual image path
+    //   tags: ["Mobile App", "Education", "Kids", "Coding"],
+    // },
     // {
     //   id: "teenmamos",
     //   title: "teenMAMOS",
@@ -152,31 +151,36 @@ export default function ProductsPage() {
         highlightedTitle="Products"
         description="Explore our portfolio of innovative digital products and solutions we've developed to address diverse client needs across various industries."
         buttonText="Discuss Your Idea"
-        buttonLink="#contact"
+        buttonLink="/company/contact"
       />
 
-      
-       <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
-          {productsData.find(p => p.id === 'diplomat-corner') && (
+          {productsData.find((p) => p.id === "diplomat-corner") && (
             <FeaturedProject
-              title={productsData.find(p => p.id === 'diplomat-corner')!.title}
-              description={productsData.find(p => p.id === 'diplomat-corner')!.description}
-              image={productsData.find(p => p.id === 'diplomat-corner')!.image}
+              title={
+                productsData.find((p) => p.id === "diplomat-corner")!.title
+              }
+              description={
+                productsData.find((p) => p.id === "diplomat-corner")!
+                  .description
+              }
+              image={
+                productsData.find((p) => p.id === "diplomat-corner")!.image
+              }
               buttonText="Visit Diplomat Corner"
-              buttonLink={productsData.find(p => p.id === 'diplomat-corner')!.url}
+              buttonLink={
+                productsData.find((p) => p.id === "diplomat-corner")!.url
+              }
             />
           )}
         </div>
-      </section> 
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <ProjectsGrid
-            projects={visibleProducts.map(product => ({
-              ...product,
-              id: Number(product.id)
-            }))}
+            projects={visibleProducts}
             showLoadMore={showLoadMore}
             onLoadMore={handleLoadMore}
             projectLinkPrefix="/products"
@@ -189,7 +193,6 @@ export default function ProductsPage() {
         description="Let's collaborate to transform your vision into a successful digital product. Our experts are here to guide you every step of the way."
         buttonText="Get in Touch"
         buttonLink="#contact"
-        
       />
     </div>
   );
