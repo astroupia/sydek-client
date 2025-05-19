@@ -54,14 +54,14 @@ const navItems = [
     submenu: {
       featured: [
         {
-          title: "Custom Projects",
+          title: "Our Products",
           description: "Scalable solutions for large organizations",
           image: "/placeholder.svg?height=200&width=300",
           href: "/solutions/products",
           color: "from-orange-500/20 to-red-500/20",
         },
         {
-          title: "Our Products",
+          title: "Custom Projects",
           description: "Tailored solutions for your unique needs",
           image: "/placeholder.svg?height=200&width=300",
           href: "/solutions/projects",
