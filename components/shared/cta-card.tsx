@@ -30,7 +30,7 @@ const CtaCard: React.FC<CtaCardProps> = ({
         variant={buttonVariant}
         className={
           buttonVariant === "outline"
-            ? "border-white text-white hover:bg-white hover:text-secondary"
+            ? "bg-secondary border-white text-white hover:bg-white hover:text-secondary"
             : ""
         }
         onClick={onButtonClick}

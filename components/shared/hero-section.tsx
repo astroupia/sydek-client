@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import InteractiveBackground from "@/components/interactive-background";
 import { ArrowRight } from "lucide-react";
 
-interface HeroSectionProps { 
+interface HeroSectionProps {
   title: string;
   highlightedTitle?: string; // Optional part of title with gradient
   description: string;
@@ -42,25 +42,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
         {buttonText && (
           <Button
-          size="lg"
-          className="bg-secondary hover:bg-secondary/90 text-white"
-          onClick={onButtonClick}
-          asChild={!!buttonLink} // Use asChild for Link wrapping
-        >
-          {buttonLink ? (
-            <a href={buttonLink}>
-              {buttonText}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          ) : (
-            <>
-              {buttonText}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </>
-          )}
-        </Button>
+            size="lg"
+            className="bg-secondary hover:bg-secondary/90 text-white"
+            onClick={onButtonClick}
+            asChild={!!buttonLink} // Use asChild for Link wrapping
+          >
+            {buttonLink ? (
+              <a href={buttonLink}>
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            ) : (
+              <>
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </>
+            )}
+          </Button>
         )}
-        
       </div>
     </div>
   </section>
