@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import InteractiveBackground from "@/components/interactive-background";
 import { ArrowRight } from "lucide-react";
 
-interface HeroSectionProps {
+interface HeroSectionProps { 
   title: string;
   highlightedTitle?: string; // Optional part of title with gradient
   description: string;
-  buttonText: string;
+  buttonText?: string;
   buttonLink?: string; // Optional link for routing
   onButtonClick?: () => void; // Optional click handler
   backgroundParticles?: number; // Customize InteractiveBackground
@@ -40,7 +40,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
           {description}
         </p>
-        <Button
+        {buttonText && (
+          <Button
           size="lg"
           className="bg-secondary hover:bg-secondary/90 text-white"
           onClick={onButtonClick}
@@ -58,6 +59,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </>
           )}
         </Button>
+        )}
+        
       </div>
     </div>
   </section>

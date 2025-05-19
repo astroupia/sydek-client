@@ -1,204 +1,196 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2, Users, Calendar } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+"use client";
 
-const projects = [
-  {
-    title: "E-Commerce Platform Redesign",
-    client: "FashionForward Inc.",
-    description:
-      "A complete overhaul of an e-commerce platform, focusing on user experience, performance, and conversion optimization.",
-    category: "Web Development",
-    duration: "3 months",
-    team: "5 members",
-    features: [
-      "Responsive design",
-      "Advanced search and filtering",
-      "Personalized recommendations",
-      "Streamlined checkout process",
-      "Integration with inventory management",
-    ],
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    title: "HealthTrack Mobile App",
-    client: "WellnessTech Solutions",
-    description: "A comprehensive health and fitness tracking mobile application for iOS and Android platforms.",
-    category: "Mobile Development",
-    duration: "4 months",
-    team: "6 members",
-    features: [
-      "Activity and workout tracking",
-      "Nutrition logging and analysis",
-      "Integration with wearable devices",
-      "Personalized health insights",
-      "Social features for motivation",
-    ],
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    title: "SmartCity IoT Dashboard",
-    client: "MetropolisTech",
-    description:
-      "An IoT-powered dashboard for city administrators to monitor and manage various urban systems in real-time.",
-    category: "IoT & Data Visualization",
-    duration: "6 months",
-    team: "8 members",
-    features: [
-      "Real-time data visualization",
-      "Predictive maintenance alerts",
-      "Energy consumption optimization",
-      "Traffic flow management",
-      "Environmental monitoring",
-    ],
-    image: "/placeholder.svg?height=400&width=600",
-  },
-  {
-    title: "AI-Driven Customer Service Platform",
-    client: "GlobalSupport Corp.",
-    description: "An AI-powered customer service platform that enhances support efficiency and customer satisfaction.",
-    category: "AI & Machine Learning",
-    duration: "5 months",
-    team: "7 members",
-    features: [
-      "Natural language processing",
-      "Sentiment analysis",
-      "Automated ticket routing",
-      "Knowledge base integration",
-      "Performance analytics dashboard",
-    ],
-    image: "/placeholder.svg?height=400&width=600",
-  },
-]
+import React from "react"; // Import React if not already
+import HeroSection from "@/components/shared/hero-section";
+import CtaCard from "@/components/shared/cta-card";
+import ProjectsGrid from "@/components/projects/projects-grid"; // Assuming this component can handle the Product type or is adaptable
+import FeaturedProject from "@/components/projects/featured-project";
 
-export default function ProjectsPage() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(95,31,95,0.2),transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(187,173,213,0.2),transparent_60%)]"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Our <span className="text-gradient">Projects</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Explore our portfolio of innovative digital solutions across various industries.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 max-w-md mx-auto mb-12">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="web">Web</TabsTrigger>
-              <TabsTrigger value="mobile">Mobile</TabsTrigger>
-              <TabsTrigger value="ai">AI & IoT</TabsTrigger>
-            </TabsList>
-
-            {["all", "web", "mobile", "ai"].map((tab) => (
-              <TabsContent key={tab} value={tab} className="mt-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {projects
-                    .filter(
-                      (project) =>
-                        tab === "all" ||
-                        (tab === "web" && project.category === "Web Development") ||
-                        (tab === "mobile" && project.category === "Mobile Development") ||
-                        (tab === "ai" &&
-                          (project.category === "AI & Machine Learning" ||
-                            project.category === "IoT & Data Visualization")),
-                    )
-                    .map((project, index) => (
-                      <Card
-                        key={index}
-                        className="border bg-background hover:shadow-md transition-all duration-300 overflow-hidden"
-                      >
-                        <div className="aspect-[16/9] overflow-hidden">
-                          <Image
-                            src={project.image || "/placeholder.svg"}
-                            alt={project.title}
-                            width={600}
-                            height={400}
-                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                          />
-                        </div>
-                        <CardHeader>
-                          <CardTitle>{project.title}</CardTitle>
-                          <CardDescription>{project.client}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground mb-4">{project.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="text-xs font-medium bg-secondary/10 text-secondary px-2 py-1 rounded-full">
-                              {project.category}
-                            </span>
-                            <span className="text-xs font-medium bg-muted px-2 py-1 rounded-full flex items-center">
-                              <Calendar className="h-3 w-3 mr-1" />
-                              {project.duration}
-                            </span>
-                            <span className="text-xs font-medium bg-muted px-2 py-1 rounded-full flex items-center">
-                              <Users className="h-3 w-3 mr-1" />
-                              {project.team}
-                            </span>
-                          </div>
-                          <h4 className="font-semibold mb-2">Key Features:</h4>
-                          <ul className="space-y-1">
-                            {project.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-start">
-                                <CheckCircle2 className="h-4 w-4 text-secondary mr-2 flex-shrink-0 mt-1" />
-                                <span className="text-sm">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                        <CardFooter>
-                          <Button
-                            asChild
-                            variant="ghost"
-                            className="w-full justify-start p-0 hover:bg-transparent hover:text-secondary"
-                          >
-                            <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                              View Case Study
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    ))}
-                </div>
-              </TabsContent>
-            ))}
-          </Tabs>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl mb-8 text-muted-foreground">
-              Let's collaborate to create innovative solutions that drive your business forward.
-            </p>
-            <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
-              <Link href="/contact">
-                Get in Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+// Define the Product interface directly in this file
+export interface Product {
+  id: string; // A unique slug-like identifier (e.g., "green-cheddar")
+  title: string;
+  description: string;
+  category: string; // e.g., "Web Development", "Mobile App", "AI Tool"
+  image: string; // Path to the product image/mockup
+  url?: string; // Optional URL to the live product or more info
+  tags?: string[]; // Optional tags like "Fintech", "Education", "E-commerce"
 }
 
+
+export default function ProductsPage() {
+  const productsData: Product[] = [
+    // {
+    //   id: "greencheddar",
+    //   title: "GreenCheddar",
+    //   description:
+    //     "A platform helping households address living costs by saving carbon as an asset class. Features a lively, analytically based user experience and a complementary app.",
+    //   category: "Web Development & Mobile App",
+    //   image: "../assets/images/products/greencheddar.png", // Replace with actual image path
+    //   url: "https://greencheddar.org",
+    //   tags: ["Sustainability", "Fintech", "Web App", "Mobile App"],
+    // },
+    {
+      id: "rehoboth-athletics",
+      title: "Rehoboth International Athletics",
+      description:
+        "A website capturing the essence of championship for an international athletics organization, designed to meet high standards and showcase their tenacity.",
+      category: "Web Development & Branding",
+      image: "../assets/images/products/rehoboth-athletics.png", // Replace with actual image path
+      url: "https://rehobothathletics.com",
+      tags: ["Sports", "Branding", "Web Design"],
+    },
+    {
+      id: "nibertad",
+      title: "NiberTad",
+      description:
+        "A pioneering real estate dealership platform in Ethiopia, offering property advertisements with a user-centric software design.",
+      category: "Web Platform",
+      image: "../assets/images/projects/nibertad.png", // Replace with actual image path
+      url: "https://nibretad.com",
+      tags: ["Real Estate", "Platform", "Ethiopia"],
+    },
+    // {
+    //   id: "shegerai",
+    //   title: "Shegerai",
+    //   description:
+    //     "A basic AI service website for the Ethiopian community, allowing customers to subscribe to AI-powered services.",
+    //   category: "AI Service & Web Platform",
+    //   image: "../assets/images/projects/shegerai.png", // Replace with actual image path
+    //   url: "https://shegerai.com",
+    //   tags: ["AI", "Subscription", "Ethiopia", "Web Service"],
+    // },
+    {
+      id: "diplomat-corner",
+      title: "Diplomat Corner",
+      description:
+        "A trusted service platform for the diplomatic community in Ethiopia, offering property management, car rentals, and liaison support since 2015.",
+      category: "Service Platform",
+      image: "../assets/images/projects/diplomat-corner.png", // Replace with actual image path
+      tags: ["Diplomatic Services", "Platform", "Ethiopia"],
+    },
+    {
+      id: "beblocky",
+      title: "BeBlocky",
+      description:
+        "A revolutionary app for kids making learning computer programming interactive and fun using graphical blocks, inspired by Scratch.",
+      category: "Mobile App & Education",
+      image: "../assets/images/projects/beblocky.png", // Replace with actual image path
+      tags: ["Mobile App", "Education", "Kids", "Coding"],
+    },
+    // {
+    //   id: "teenmamos",
+    //   title: "teenMAMOS",
+    //   description:
+    //     "An Ethiopian online magazine for teenagers, offering advice, entertainment, quizzes, fashion, and lifestyle content.",
+    //   category: "Mobile App & Digital Magazine",
+    //   image: "../assets/images/projects/teenmamos.png", // Replace with actual image path
+    //   tags: ["Mobile App", "Magazine", "Teens", "Ethiopia"],
+    // },
+    {
+      id: "9grocery",
+      title: "9 Grocery",
+      description:
+        "A cutting-edge user app revolutionizing grocery shopping with an intuitive platform for convenient online ordering and home delivery.",
+      category: "Mobile App & E-commerce",
+      image: "../assets/images/projects/9grocery.png", // Replace with actual image path
+      tags: ["Mobile App", "E-commerce", "Grocery", "Convenience"],
+    },
+    {
+      id: "pandro",
+      title: "Pandro",
+      description:
+        "An Instagram automation tool for businesses to streamline customer engagement, automating direct messaging with personalized responses and analytics.",
+      category: "AI Tool & Social Media",
+      image: "../assets/images/projects/pandro.png", // Replace with actual image path
+      tags: ["AI", "Automation", "Instagram", "Social Media Marketing"],
+    },
+    {
+      id: "cadolast",
+      title: "Cadolast",
+      description:
+        "A web application converting online articles into audio playlists using text-to-speech, offering an immersive, hands-free reading experience.",
+      category: "Web Application & Accessibility",
+      image: "../assets/images/projects/cadolast.png", // Replace with actual image path
+      tags: ["Text-to-Speech", "Web App", "Accessibility", "Productivity"],
+    },
+    {
+      id: "wisetoq",
+      title: "WiseToq",
+      description:
+        "An advanced AI social media tool for TikTok, automating high-quality, contextually relevant comments based on video transcripts to boost engagement.",
+      category: "AI Tool & Social Media",
+      image: "../assets/images/products/wisetoq.png", // Replace with actual image path
+      tags: ["AI", "TikTok", "Social Media Marketing", "Engagement"],
+    },
+  ];
+
+  const initialDisplayCount = 6;
+  const [visibleProducts, setVisibleProducts] = React.useState<Product[]>(
+    productsData.slice(0, initialDisplayCount)
+  );
+  const [showLoadMore, setShowLoadMore] = React.useState<boolean>(
+    productsData.length > initialDisplayCount
+  );
+
+  const handleLoadMore = () => {
+    const currentLength = visibleProducts.length;
+    const nextProducts = productsData.slice(
+      currentLength,
+      currentLength + initialDisplayCount
+    );
+    setVisibleProducts([...visibleProducts, ...nextProducts]);
+    if (currentLength + nextProducts.length >= productsData.length) {
+      setShowLoadMore(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <HeroSection
+        title="Our"
+        highlightedTitle="Products"
+        description="Explore our portfolio of innovative digital products and solutions we've developed to address diverse client needs across various industries."
+        buttonText="Discuss Your Idea"
+        buttonLink="#contact"
+      />
+
+      
+       <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          {productsData.find(p => p.id === 'diplomat-corner') && (
+            <FeaturedProject
+              title={productsData.find(p => p.id === 'diplomat-corner')!.title}
+              description={productsData.find(p => p.id === 'diplomat-corner')!.description}
+              image={productsData.find(p => p.id === 'diplomat-corner')!.image}
+              buttonText="Visit Diplomat Corner"
+              buttonLink={productsData.find(p => p.id === 'diplomat-corner')!.url}
+            />
+          )}
+        </div>
+      </section> 
+
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <ProjectsGrid
+            projects={visibleProducts.map(product => ({
+              ...product,
+              id: Number(product.id)
+            }))}
+            showLoadMore={showLoadMore}
+            onLoadMore={handleLoadMore}
+            projectLinkPrefix="/products"
+          />
+        </div>
+      </section>
+
+      <CtaCard
+        title="Ready to Build Your Next Product?"
+        description="Let's collaborate to transform your vision into a successful digital product. Our experts are here to guide you every step of the way."
+        buttonText="Get in Touch"
+        buttonLink="#contact"
+        
+      />
+    </div>
+  );
+}

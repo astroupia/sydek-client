@@ -54,7 +54,7 @@ const navItems = [
     submenu: {
       featured: [
         {
-          title: "Enterprise Solutions",
+          title: "Our Products",
           description: "Scalable solutions for large organizations",
           image: "/placeholder.svg?height=200&width=300",
           href: "/solutions/products",
