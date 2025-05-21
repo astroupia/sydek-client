@@ -29,26 +29,26 @@ export default function ProductsPage() {
     //   url: "https://greencheddar.org",
     //   tags: ["Sustainability", "Fintech", "Web App", "Mobile App"],
     // },
-    {
-      id: "rehoboth-athletics",
-      title: "Rehoboth International Athletics",
-      description:
-        "A website capturing the essence of championship for an international athletics organization, designed to meet high standards and showcase their tenacity.",
-      category: "Web Development & Branding",
-      image: "../assets/images/products/rehoboth-athletics.png", // Replace with actual image path
-      url: "https://rehobothathletics.com",
-      tags: ["Sports", "Branding", "Web Design"],
-    },
     // {
-    //   id: "nibertad",
-    //   title: "NiberTad",
+    //   id: "rehoboth-athletics",
+    //   title: "Rehoboth International Athletics",
     //   description:
-    //     "A pioneering real estate dealership platform in Ethiopia, offering property advertisements with a user-centric software design.",
-    //   category: "Web Platform",
-    //   image: "../assets/images/projects/nibertad.png", // Replace with actual image path
-    //   url: "https://nibretad.com",
-    //   tags: ["Real Estate", "Platform", "Ethiopia"],
+    //     "A website capturing the essence of championship for an international athletics organization, designed to meet high standards and showcase their tenacity.",
+    //   category: "Web Development & Branding",
+    //   image: "../assets/images/products/rehoboth-athletics.png", // Replace with actual image path
+    //   url: "https://rehobothathletics.com",
+    //   tags: ["Sports", "Branding", "Web Design"],
     // },
+    {
+      id: "nibertad",
+      title: "NiberTad",
+      description:
+        "A pioneering real estate dealership platform in Ethiopia, offering property advertisements with a user-centric software design.",
+      category: "Web Platform",
+      image: "../assets/images/projects/nibertad.png", // Replace with actual image path
+      url: "https://nibretad.com",
+      tags: ["Real Estate", "Platform", "Ethiopia"],
+    },
     // {
     //   id: "shegerai",
     //   title: "Shegerai",
@@ -119,7 +119,7 @@ export default function ProductsPage() {
       description:
         "An advanced AI social media tool for TikTok, automating high-quality, contextually relevant comments based on video transcripts to boost engagement.",
       category: "AI Tool & Social Media",
-      image: "../assets/images/products/wisetoq.png", // Replace with actual image path
+      image: "../assets/images/projects/wisetoq.png", // Replace with actual image path
       tags: ["AI", "TikTok", "Social Media Marketing", "Engagement"],
     },
   ];
