@@ -127,10 +127,12 @@ export default function OutsourcingPage() {
                       ))}
                     </ul>
 
-                    <Button className="bg-secondary hover:bg-secondary/90">
-                      Request a Team
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link href="/company/contact">
+                      <Button className="bg-secondary hover:bg-secondary/90">
+                        Request a Team
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
 
                   <div className="relative rounded-xl overflow-hidden h-[300px] md:h-[400px] bg-gradient-to-br from-secondary/10 to-tertiary/10 flex items-center justify-center">
@@ -238,10 +240,12 @@ export default function OutsourcingPage() {
                       ))}
                     </ul>
 
-                    <Button className="bg-secondary hover:bg-secondary/90">
-                      Find an Expert
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link href="/company/contact">
+                      <Button className="bg-secondary hover:bg-secondary/90">
+                        Find an Expert
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -275,10 +279,12 @@ export default function OutsourcingPage() {
                       ))}
                     </ul>
 
-                    <Button className="bg-secondary hover:bg-secondary/90">
-                      Explore Procurement
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link href="/company/contact">
+                      <Button className="bg-secondary hover:bg-secondary/90">
+                        Explore Procurement
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
 
                   <div className="relative rounded-xl overflow-hidden h-[300px] md:h-[400px] bg-gradient-to-br from-tertiary/10 to-secondary/10 flex items-center justify-center">
@@ -382,14 +388,14 @@ export default function OutsourcingPage() {
               {
                 quote:
                   "Their dedicated team took our project from concept to completion seamlessly. Exceptional quality and communication!",
-                author: "Sarah M., Tech Startup CEO",
-                company: "InnovateX",
+                author: "Getaneh S, Tech CEO",
+                company: "Diplomat Corner",
               },
               {
                 quote:
-                  "The procurement services saved us 30% on software costs while ensuring compliance and efficiency.",
-                author: "John D., IT Director",
-                company: "GlobalCorp",
+                  "They help me generate more leads with the digital world they built for my company",
+                author: "Bewqet L, CEO",
+                company: "Organic Millstone",
               },
             ].map((testimonial, index) => (
               <Card key={index} className="bg-card border shadow-sm">

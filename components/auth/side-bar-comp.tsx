@@ -16,6 +16,8 @@ const Sidebar: React.FC<SidebarProps> = ({ tab }) => {
         <h3 className="text-2xl font-bold mb-4 relative z-10">
           Why Join Sydek?
         </h3>
+
+        
         <div className="space-y-6 relative z-10">
           <div className="flex gap-4 items-start">
             <div className="bg-secondary/10 p-2 rounded-lg">
