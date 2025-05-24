@@ -87,7 +87,7 @@ const products: Product[] = [
       "Comprehensive PDF reports and strategy breakdowns",
       "Secure dashboard with real-time tracking",
     ],
-    link: "https://echolens.vercel.app/",
+    link: "https://echolens.infy.uk",
   },
 ];
 
